@@ -8,9 +8,7 @@ from aiogram.dispatcher.filters import Command, Text
 async def show(message: Message):
     await message.answer("Выберите стул", reply_markup=menu)
 
-
-@dp.message_handler(Text(equals=["Я постою", "Второй стул",
-                                 "Первый стул"]))
+@dp.message_handler(Text(equals=["Я постою", "Второй стул", "Первый стул"]))
 async def get_chair(message: Message):
     await message.answer(f'Ты выбрал {message.text}. Мудрый выбор',
-                         reply_markup=ReplyKeyboardRemove())
+                    reply_markup=ReplyKeyboardRemove())

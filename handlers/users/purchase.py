@@ -3,7 +3,7 @@ from aiogram.types import CallbackQuery
 from aiogram.dispatcher.filters import Command
 
 from loader import dp
-from keyboards.inline.choice_buttons import choice
+from keyboards.inline.choice_buttons import choice, rickRolling_keyboard
 from keyboards.inline.callback_data import buy_callback
 
 
@@ -28,4 +28,4 @@ async def chose_tea(call: CallbackQuery):
 @dp.callback_query_handler(buy_callback.filter(item_name="no"))
 async def chose_tea(call: CallbackQuery):
     await call.answer(cache_time=60)
-    await call.message.answer("Ладно...")
+    await call.message.answer("Ладно...", reply_markup=rickRolling_keyboard)
